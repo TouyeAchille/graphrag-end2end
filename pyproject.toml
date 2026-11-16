@@ -1,0 +1,46 @@
+[project]
+name = "graphrag-end2nd"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "TouyeAchille", email = "touyejunior@gmail.com" }
+]
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "docling[rapidocr]>=2.150.1",
+    "docling-slim[format-markdown,format-pdf-docling]>=2.150.0",
+    "langchain>=1.5.0",
+    "langchain-docling>=3.0.0",
+    "loguru>=0.8.0",
+    "pydantic>=2.14.3",
+    "torch==2.2.2",
+    "torchvision==0.17.2",
+    "onnxruntime>=1.23.2",
+    "numpy<2",
+    "rapidocr>=3.10.0",
+]
+
+[project.scripts]
+graphrag-end2nd = "graphrag_end2nd:main"
+
+
+[tool.uv]
+required-environments = [
+    "sys_platform == 'darwin' and platform_machine == 'x86_64'",
+]
+
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.7.0",
+]
+notebook = [
+    "ipykernel>=7.4.0",
+    "tqdm>=4.70.1",
+]
+
+
+[build-system]
+requires = ["uv_build>=0.11.8,<0.12.0"]
+build-backend = "uv_build"
